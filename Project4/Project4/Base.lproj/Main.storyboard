@@ -16,8 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMU-fy-me7">
-                                <rect key="frame" x="433" y="123" width="30" height="30"/>
+                                <rect key="frame" x="414" y="118" width="75" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <segue destination="BV1-FR-VrT" kind="show" id="kBl-JO-b7L"/>

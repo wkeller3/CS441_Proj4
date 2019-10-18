@@ -12,11 +12,10 @@ import SpriteKit
 import GameplayKit
 
 class MainMenuViewController: UIViewController {
-
     
-    @IBOutlet weak var playButton: UIButton!
-    
+    @IBOutlet weak var playButton: UIButton!;
     override func viewDidLoad() {
         super.viewDidLoad()
+        //playButton.titleLabel?.font = playButton.titleLabel?.font.withSize(100)
     }
 }
