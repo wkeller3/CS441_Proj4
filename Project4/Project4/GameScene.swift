@@ -9,48 +9,25 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private var player : SKSpriteNode?;
+    private var floor : SKSpriteNode?;
     let cam = SKCameraNode();
     var flagR:Bool = false;
     var flagL:Bool = false;
-    let playerCategory: UInt32 = 0x1 << 0;
-    let groundCategory: UInt32 = 0x1 << 1;
-    let platformCategory: UInt32 = 0x1 << 2;
     
     override func didMove(to view: SKView) {
+        self.physicsWorld.contactDelegate = self;
         self.player = self.childNode(withName: "player") as? SKSpriteNode;
-        player!.physicsBody!.contactTestBitMask = groundCategory | platformCategory;
+        self.floor = self.childNode(withName: "floor") as? SKSpriteNode;
         self.camera = cam;
-    }
-    
-    func collisionBetweenG(player: SKNode, ground: SKNode){
-        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 40))
-    }
-    
-    func collisionBetweenP(player: SKNode, platform: SKNode){
+        print("BEGIN");
         
     }
     
     func didBegin(_ contact: SKPhysicsContact){
-        if contact.bodyA.node?.name == "player"{
-            
-            if contact.bodyB.node?.name == "ground"{
-                collisionBetweenG(player: contact.bodyA.node!, ground: contact.bodyB.node!)
-            } else if contact.bodyB.node?.name == "platform"{
-                collisionBetweenP(player: contact.bodyA.node!, platform: contact.bodyB.node!)
-            }
-            
-        } else if contact.bodyB.node?.name == "player"{
-            
-            if contact.bodyA.node?.name == "ground"{
-                collisionBetweenG(player: contact.bodyB.node!, ground: contact.bodyA.node!)
-            } else if contact.bodyA.node?.name == "platform"{
-                collisionBetweenP(player: contact.bodyB.node!, platform: contact.bodyA.node!)
-            }
-            
-        }
+        print("TEST");
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
