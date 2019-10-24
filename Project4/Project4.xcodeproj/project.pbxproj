@@ -18,6 +18,8 @@
 		BE9A4EC2235755FA00C9D1D2 /* Project4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9A4EC1235755FA00C9D1D2 /* Project4Tests.swift */; };
 		BE9A4ECD235755FA00C9D1D2 /* Project4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9A4ECC235755FA00C9D1D2 /* Project4UITests.swift */; };
 		BE9A4F1D2357602300C9D1D2 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9A4F1C2357602300C9D1D2 /* MainMenuViewController.swift */; };
+		BEFB61E423623EE4002DD2C7 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB61E323623EE4002DD2C7 /* LeaderboardViewController.swift */; };
+		BEFB61E623624104002DD2C7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEFB61E523624104002DD2C7 /* GameOverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		BE9A4ECC235755FA00C9D1D2 /* Project4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project4UITests.swift; sourceTree = "<group>"; };
 		BE9A4ECE235755FA00C9D1D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE9A4F1C2357602300C9D1D2 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		BEFB61E323623EE4002DD2C7 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		BEFB61E523624104002DD2C7 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				BE9A4EAE235755F800C9D1D2 /* GameViewController.swift */,
 				BE9A4EB3235755FA00C9D1D2 /* Assets.xcassets */,
 				BE9A4EB0235755F800C9D1D2 /* Main.storyboard */,
+				BEFB61E523624104002DD2C7 /* GameOverViewController.swift */,
+				BEFB61E323623EE4002DD2C7 /* LeaderboardViewController.swift */,
 				BE9A4EB5235755FA00C9D1D2 /* LaunchScreen.storyboard */,
 				BE9A4F1C2357602300C9D1D2 /* MainMenuViewController.swift */,
 				BE9A4EB8235755FA00C9D1D2 /* Info.plist */,
@@ -272,6 +278,8 @@
 			files = (
 				BE9A4F1D2357602300C9D1D2 /* MainMenuViewController.swift in Sources */,
 				BE9A4EAD235755F800C9D1D2 /* GameScene.swift in Sources */,
+				BEFB61E623624104002DD2C7 /* GameOverViewController.swift in Sources */,
+				BEFB61E423623EE4002DD2C7 /* LeaderboardViewController.swift in Sources */,
 				BE9A4EAF235755F800C9D1D2 /* GameViewController.swift in Sources */,
 				BE9A4EA7235755F800C9D1D2 /* AppDelegate.swift in Sources */,
 			);
