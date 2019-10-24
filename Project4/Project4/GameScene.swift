@@ -17,6 +17,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var flagR:Bool = false;
     var flagL:Bool = false;
     var jump:Bool = false;
+    var score:SKLabelNode?;
     
     override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self;
@@ -24,7 +25,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.floor = self.childNode(withName: "floor") as? SKSpriteNode;
         player!.physicsBody?.contactTestBitMask = player!.physicsBody!.collisionBitMask;
         self.camera = cam;
-        
+        score = SKLabelNode(text: String(0));
+        score?.position = CGPoint(x: cam.position.x+500, y: cam.position.y+300);
+        addChild(score!);
     }
     
     func didBegin(_ contact: SKPhysicsContact){
@@ -68,6 +71,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player?.physicsBody?.applyImpulse(CGVector(dx: -5, dy: 0));
         }
         cam.position = CGPoint(x: player!.position.x+500, y: player!.position.y+245);
+        score?.position = CGPoint(x: cam.position.x+500, y: cam.position.y+300);
         if(player!.position.x > CGFloat(775)){
             floor?.removeFromParent();
             self.childNode(withName: "stair1")?.removeFromParent();
