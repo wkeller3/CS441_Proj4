@@ -63,6 +63,12 @@
                                     <segue destination="upR-Uo-Tlo" kind="show" id="KnV-Eq-axp"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ISm-Rg-Lre">
+                                <rect key="frame" x="316" y="143" width="240" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="nK2-Tc-J6K"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="ddw-2T-XdG"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="1f0-mo-7eY"/>

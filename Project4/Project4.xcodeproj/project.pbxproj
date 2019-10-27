@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BE2F3E582364D0BC006EE9D4 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F3E572364D0BC006EE9D4 /* GameOver.swift */; };
 		BE2F3E5A2364D1ED006EE9D4 /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE2F3E592364D1ED006EE9D4 /* GameOver.sks */; };
-		BE2F3E5E236554C7006EE9D4 /* Leaderboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2F3E5D236554C7006EE9D4 /* Leaderboard.swift */; };
 		BE9A4EA7235755F800C9D1D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9A4EA6235755F800C9D1D2 /* AppDelegate.swift */; };
 		BE9A4EA9235755F800C9D1D2 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE9A4EA8235755F800C9D1D2 /* GameScene.sks */; };
 		BE9A4EAB235755F800C9D1D2 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE9A4EAA235755F800C9D1D2 /* Actions.sks */; };
@@ -44,7 +43,6 @@
 /* Begin PBXFileReference section */
 		BE2F3E572364D0BC006EE9D4 /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		BE2F3E592364D1ED006EE9D4 /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
-		BE2F3E5D236554C7006EE9D4 /* Leaderboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Leaderboard.swift; sourceTree = "<group>"; };
 		BE9A4EA3235755F800C9D1D2 /* Project4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE9A4EA6235755F800C9D1D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE9A4EA8235755F800C9D1D2 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				BE9A4EA8235755F800C9D1D2 /* GameScene.sks */,
 				BE2F3E592364D1ED006EE9D4 /* GameOver.sks */,
 				BE9A4EAA235755F800C9D1D2 /* Actions.sks */,
-				BE2F3E5D236554C7006EE9D4 /* Leaderboard.swift */,
 				BE9A4EAC235755F800C9D1D2 /* GameScene.swift */,
 				BE2F3E572364D0BC006EE9D4 /* GameOver.swift */,
 				BE9A4EAE235755F800C9D1D2 /* GameViewController.swift */,
@@ -286,7 +283,6 @@
 				BE9A4F1D2357602300C9D1D2 /* MainMenuViewController.swift in Sources */,
 				BE9A4EAD235755F800C9D1D2 /* GameScene.swift in Sources */,
 				BEFB61E423623EE4002DD2C7 /* LeaderboardViewController.swift in Sources */,
-				BE2F3E5E236554C7006EE9D4 /* Leaderboard.swift in Sources */,
 				BE2F3E582364D0BC006EE9D4 /* GameOver.swift in Sources */,
 				BE9A4EAF235755F800C9D1D2 /* GameViewController.swift in Sources */,
 				BE9A4EA7235755F800C9D1D2 /* AppDelegate.swift in Sources */,
