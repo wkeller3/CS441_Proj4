@@ -9,6 +9,10 @@
 import SpriteKit
 import GameplayKit
 
+struct Score{
+    static var scoreInt:Int = 0
+}
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     struct ContactBits : OptionSet{
@@ -38,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var flagL:Bool = false;
     var jump:Bool = false;
     var score:SKLabelNode?;
-    var scoreInt:Int = 0;
+    //var scoreInt:Int = 0;
     
     override func didMove(to view: SKView) {
         self.physicsWorld.contactDelegate = self;
@@ -46,7 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.floor = self.childNode(withName: "floor") as? SKSpriteNode;
         //player!.physicsBody?.contactTestBitMask = player!.physicsBody!.collisionBitMask;
         self.camera = cam;
-        score = SKLabelNode(text: String(scoreInt));
+        score = SKLabelNode(text: String(Score.scoreInt));
         score?.position = CGPoint(x: cam.position.x+650, y: cam.position.y+350);
         addChild(score!);
         setUpNodes();
@@ -62,14 +66,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         floor?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
         
         coin1 = self.childNode(withName: "coin1") as? SKSpriteNode;
-        coin1?.physicsBody?.categoryBitMask = UInt32(ContactBits.COIN.rawValue);
-        coin1?.physicsBody?.collisionBitMask = 0;
-        coin1?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setCoin(node: coin1!);
         
         coin2 = self.childNode(withName: "coin2") as? SKSpriteNode;
-        coin2?.physicsBody?.categoryBitMask = UInt32(ContactBits.COIN.rawValue);
-        coin2?.physicsBody?.collisionBitMask = 0;
-        coin2?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setCoin(node: coin2!);
         
         wall1 = self.childNode(withName: "wall1") as? SKSpriteNode;
         wall1?.physicsBody?.categoryBitMask = UInt32(ContactBits.WALL.rawValue);
@@ -77,34 +77,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         wall1?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
         
         monster1 = self.childNode(withName: "monster1") as? SKSpriteNode;
-        monster1?.physicsBody?.categoryBitMask = UInt32(ContactBits.MONSTER.rawValue);
-        monster1?.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue | ContactBits.WALL.rawValue);
-        monster1?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setMonster(node: monster1!);
         
         stair1 = self.childNode(withName: "stair1") as? SKSpriteNode;
-        stair1?.physicsBody?.categoryBitMask = UInt32(ContactBits.GROUND.rawValue);
-        stair1?.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue);
-        stair1?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setStair(node: stair1!);
         
         stair2 = self.childNode(withName: "stair2") as? SKSpriteNode;
-        stair2?.physicsBody?.categoryBitMask = UInt32(ContactBits.GROUND.rawValue);
-        stair2?.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue);
-        stair2?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setStair(node: stair2!);
         
         stair3 = self.childNode(withName: "stair3") as? SKSpriteNode;
-        stair3?.physicsBody?.categoryBitMask = UInt32(ContactBits.GROUND.rawValue);
-        stair3?.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue);
-        stair3?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setStair(node: stair3!);
         
         stair4 = self.childNode(withName: "stair4") as? SKSpriteNode;
-        stair4?.physicsBody?.categoryBitMask = UInt32(ContactBits.GROUND.rawValue);
-        stair4?.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue);
-        stair4?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setStair(node: stair4!);
         
         stair5 = self.childNode(withName: "stair5") as? SKSpriteNode;
-        stair5?.physicsBody?.categoryBitMask = UInt32(ContactBits.GROUND.rawValue);
-        stair5?.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue);
-        stair5?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+        setStair(node: stair5!);
         
         platform1 = self.childNode(withName: "platform1") as? SKSpriteNode;
         platform1?.physicsBody?.categoryBitMask = UInt32(ContactBits.GROUND.rawValue);
@@ -112,13 +100,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         platform1?.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
     }
     
+    func setCoin(node : SKSpriteNode){
+        node.physicsBody?.categoryBitMask = UInt32(ContactBits.COIN.rawValue);
+        node.physicsBody?.collisionBitMask = 0;
+        node.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+    }
+    
+    func setStair(node : SKSpriteNode){
+        node.physicsBody?.categoryBitMask = UInt32(ContactBits.GROUND.rawValue);
+        node.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue);
+        node.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+    }
+    
+    func setMonster(node : SKSpriteNode){
+        node.physicsBody?.categoryBitMask = UInt32(ContactBits.MONSTER.rawValue);
+        node.physicsBody?.collisionBitMask = UInt32(ContactBits.PLAYER.rawValue | ContactBits.MONSTER.rawValue | ContactBits.WALL.rawValue);
+        node.physicsBody?.contactTestBitMask = UInt32(ContactBits.PLAYER.rawValue);
+    }
+    
     func didBegin(_ contact: SKPhysicsContact){
-//        if(contact.bodyA.node != self.childNode(withName: "wall") && contact.bodyB.node != self.childNode(withName: "wall")){
-//            jump = true;
-//        }
-//        if((contact.bodyA.node == player && contact.bodyB.node == self.childNode(withName: "ball1")) || (contact.bodyB.node == player && contact.bodyA.node == self.childNode(withName: "ball1"))){
-//            gameOver();
-//        }
 
         if(contact.bodyA.node == player){
             jump = canJump(node: contact.bodyB.node as! SKSpriteNode);
@@ -142,20 +142,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func updateScore(node : SKSpriteNode){
         if(node.physicsBody?.categoryBitMask == UInt32(ContactBits.COIN.rawValue)){
-            scoreInt += 1;
-            score?.text = String(scoreInt);
+            Score.scoreInt += 1;
+            score?.text = String(Score.scoreInt);
             node.removeFromParent();
         }
     }
     
     func gameOver(node : SKSpriteNode){
-        //JUST CREATE A NEW SCENE AND TRANSITION INTO IT
-        //MAYBE TRANSITION INTO LEADERBOARD? AND THEN HAVE A BUTTON TO RETURN TO MAIN MENU
         if(node.physicsBody?.categoryBitMask == UInt32(ContactBits.MONSTER.rawValue)){
             self.removeAllActions();
             self.removeAllChildren();
             self.removeFromParent();
-            self.view?.presentScene(nil);
+            let endScene:SKScene = GameOver(fileNamed: "GameOver")!;
+            self.view?.presentScene(endScene, transition: SKTransition.fade(withDuration: 1));
         }
     }
     
