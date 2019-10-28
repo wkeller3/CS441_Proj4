@@ -1,8 +1,8 @@
 //
-//  GameOver.swift
+//  LevelEnd.swift
 //  Project4
 //
-//  Created by Will Keller on 10/26/19.
+//  Created by Will Keller on 10/27/19.
 //  Copyright © 2019 Will Keller. All rights reserved.
 //
 
@@ -10,12 +10,7 @@ import SpriteKit
 import GameplayKit
 import UIKit
 
-struct HighScores {
-    static var names:[String] = ["---","---","---"]
-    static var highscores:[Int] = [0,0,0]
-}
-
-class GameOver : SKScene, UITextFieldDelegate{
+class LevelEnd : SKScene, UITextFieldDelegate{
     
     var score:SKLabelNode?;
     var text:UITextField?;
@@ -52,3 +47,4 @@ class GameOver : SKScene, UITextFieldDelegate{
     }
     
 }
+
